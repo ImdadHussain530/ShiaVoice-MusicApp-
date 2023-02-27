@@ -1,0 +1,57 @@
+body {
+    background: #0b1320;
+    color: #36e2ec;
+}
+
+.loginCard {
+    display: flex;
+    justify-content: center;
+    background-color: #111727;
+    height: fit-content;
+    min-height: 70vh;
+}
+
+.btn-submit {
+    margin-bottom: 0px;
+    background-color: #36e2ec;
+
+}
+.loginFieldGroup{
+    display: flex;
+    height:100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.loginFieldGroup div input{
+    background-color: #111727;
+    color: white;
+}
+.loginFieldGroup div .ErrorColor{
+    color: #ccebed;
+}
+.loginFieldGroup .signupdetail{
+    margin-top: 1vh;
+    align-self: center;
+}
+.loginFieldGroup .signupdetail a{
+    color: #ccebed;
+    margin-left: 4px;
+}
+.loginFieldGroup .signupdetail a:hover{
+    color:white;
+    text-decoration: none;
+    margin-left: 4px;
+}
+.loginFieldGroup div input, select, textarea{
+    background-color: #111727;
+    color: white;
+}
+
+
+.form-control:focus {
+    background-color: #111727;
+    color: #ccebed;
+    border-color: #36e2ec;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(54 226 236 / 25%);
+}
