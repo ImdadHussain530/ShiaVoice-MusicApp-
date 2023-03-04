@@ -1,13 +1,41 @@
+@php
+    @require('../resources/php/function.php');
+@endphp
+
+<style>
+    .update_favitem{
+        margin-left:15px;
+    }
+    .heart-red {
+        color: red;
+        border: 1px white;
+    }
+
+    .heart-white {
+        color: white;
+
+    }
+</style>
+
 <div class="master_play">
     <div class="wave">
         <div class="wave1"></div>
         <div class="wave1"></div>
         <div class="wave1"></div>
     </div>
-    <img src="{{asset('assets/img/26th.jpg')}}"alt="Alan" id="poster_master_play">
+    <img src="{{ asset('assets/img/26th.jpg') }}"alt="Alan" id="poster_master_play">
     <h5 id="title">Vande Mataram<br>
         <div class="subtitle" id="subtitle">Bankim Chandra</div>
     </h5>
+    <a data-productid="" class="update_favitem" id="update_favitem">
+        @php
+            checkFav();
+        @endphp
+
+
+
+    </a>
+
     <div class="icon">
         <i class="bi bi-skip-start-fill" id="back"></i>
         <i class="bi bi-play-fill" id="masterPlay"></i>
@@ -27,4 +55,62 @@
         <div class="vol_bar"></div>
         <div class="dot" id="vol_dot"></div>
     </div>
+
+
+
+
 </div>
+
+
+
+
+@push('javascript')
+    <script>
+        var user_id = "{{ Auth::id() }}";
+
+        $(document).ready(function() {
+            $('.update_favitem').click(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+
+                var product_id = $('.update_favitem').attr('data-productid');
+                console.log(product_id);
+                $.ajax({
+                    type: 'POST',
+                    url: '/updateFavList',
+                    data: {
+                        product_id: product_id,
+                        user_id: user_id
+
+                    },
+                    success: function(response) {
+
+                        if (response.action == "add") {
+                            console.log(product_id);
+                             $('.update_favitem').html(
+                                `<i class="fas heart-red fa-heart "></i>`)
+
+
+                        } else if (response.action == "remove") {
+                            console.log(product_id);
+                            $('.update_favitem').html(
+                                `<i class="far heart-white fa-heart "></i>`)
+
+                        }
+
+
+
+                    }
+
+                });
+
+            });
+
+
+        });
+    </script>
+@endpush

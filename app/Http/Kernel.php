@@ -49,7 +49,14 @@ class Kernel extends HttpKernel
         ],
         'Iflogin'=>[
             \App\Http\Middleware\IfLoggedIn::class,
-        ]
+        ],
+        'AdminCustomAuth'=>[
+            \App\Http\Middleware\CheckAdminLoggedIn::class,
+
+        ],
+        'AdminIflogin'=>[
+            \App\Http\Middleware\AdminIfLoggedIn::class,
+        ],
     ];
 
     /**

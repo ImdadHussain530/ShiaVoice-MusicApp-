@@ -52,6 +52,7 @@
 
 
                         <input class="btn btn-submit btn-lg btn-block" value="Submit" type="submit">
+                        <h6 class="signupdetail"><a href="#">Forgot Password?</a></h6>
                         <h6 class="signupdetail">Don't have an account?<a href="{{route('registerView')}}">SignUp</a></h6>
                     </form>
                 </div>

@@ -21,7 +21,7 @@
                     {{ $music->title }}
                     <div class="subtitle">{{ $music->artist->get(0)->artist_name }}</div>
                 </h5>
-                <i class="bi playListPlay bi-play-circle-fill" id="{{ $i }}"></i>
+                <i class="bi playListPlay bi-play-circle-fill" id="{{$music->id }}"></i>
                 {{-- make to pass value to javaScript --}}
                 <input type="hidden" id="musicdata" value="{{ asset('assets/audio/uploaded/' . $music->music) }}">
                 <input type="hidden" id="imgdata" value="{{ asset('assets/img/uploaded/' . $music->poster) }}">
