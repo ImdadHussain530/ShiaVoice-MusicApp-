@@ -12,7 +12,10 @@ class ViewController extends Controller
 // --------Start---------User-views------------------------
     function dashboard(){
         $user=User::where('id','=',session()->get('loginid'))->first();
-        $musics=Music::with('artist')->get();
+        $musics=Music::select("musics.*","artist_name")
+        ->join('artists','artists.id','=','musics.artist_id')
+        ->orderBy('id')
+        ->get();
         $popularArtists=Artist::all();
         $popularmusics=Music::where('artist_id','LIKE','%'.''.'%' )->get();
         $data=compact('musics','popularmusics','popularArtists','user');
@@ -23,11 +26,12 @@ class ViewController extends Controller
         $user=User::where('id','=',session()->get('loginid'))->first();
         $musics=Music::with('artist')->get();
         $popularArtists=Artist::all();
-        $popularmusics=Music::select("*")
+        $popularmusics=Music::select('musics.*','artists.artist_name')
         ->join('artists','artists.id','=','musics.artist_id')
         ->where('title','LIKE','%'."$search".'%')
         ->orwhere('artist_name','LIKE','%'."$search".'%')
         ->get();
+
         $data=compact('musics','popularmusics','popularArtists','user');
         return view('search')->with($data);
     }

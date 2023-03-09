@@ -27,10 +27,12 @@
                             <th scope="row">{{$i}}</th>
                             <td>{{ $music->title }}</td>
                             <td>
+
                                 {{-- {{$music->music}} --}}
-                                <audio  controls id="myAudio">
-                                    <source src="{{ asset('assets/audio/uploaded/' . $music->music) }}" type="audio/mp3">
+                                <audio  controls id="myAudio" preload="metadata">
+                                    <source src="{{ asset('assets/audio/uploaded/' . $music->music) }}" type="audio/mpeg" >
                                 </audio>
+
 
 
 

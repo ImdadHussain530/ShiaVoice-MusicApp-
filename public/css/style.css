@@ -145,6 +145,14 @@ header .menu_side .menu_song li h5 .subtitle{
     font-size: 9px;
     color: #4c5262;
 }
+header .menu_side .menu_song .favitem{
+    position: absolute;
+    right: 40px;
+    top: 6px;
+    font-size: 16px;
+
+
+}
 header .menu_side .menu_song li .bi{
     position: absolute;
     right: 15px;

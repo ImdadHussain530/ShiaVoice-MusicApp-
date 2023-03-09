@@ -22,12 +22,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/function',function(){
-    ob_start();
-    require('../resources/php/function.php');
-    return checkFav();
-});
+Route::get('/function',[FavListController::class,'checkFav']);
+// Route::get('/function',function(){
+//     ob_start();
+//     require('../resources/php/function.php');
+//     return checkFav();
+// });
 Route::post('/updateFavList',[FavListController::class,'update']);
+Route::Get('/FavList',[FavListController::class,'getshow']);
+Route::POST('/FavList',[FavListController::class,'show']);
 
 
 

@@ -64,7 +64,7 @@
                 <li class="songItem">
                     <div class="img_play">
                         <img src="{{ asset('assets/img/uploaded/' . $music->poster) }}"alt="alan">
-                        <i class="bi playListPlay bi-play-circle-fill" id="{{$music->id }}"></i>
+                        <i class="bi playListPlay bi-play-circle-fill" id="{{ $music->id }}"></i>
                         <input type="hidden" id="musicdata"
                             value="{{ asset('assets/audio/uploaded/' . $music->music) }}">
                         <input type="hidden" id="imgdata" value="{{ asset('assets/img/uploaded/' . $music->poster) }}">

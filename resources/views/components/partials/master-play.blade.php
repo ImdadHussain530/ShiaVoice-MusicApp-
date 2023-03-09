@@ -1,6 +1,4 @@
-@php
-    @require('../resources/php/function.php');
-@endphp
+
 
 <style>
     .update_favitem{
@@ -27,9 +25,9 @@
     <h5 id="title">Vande Mataram<br>
         <div class="subtitle" id="subtitle">Bankim Chandra</div>
     </h5>
-    <a data-productid="" class="update_favitem" id="update_favitem">
+    <a data-musicid="" class="update_favitem" id="update_favitem">
         @php
-            checkFav();
+            echo App\Http\Controllers\FavListController::checkFav();
         @endphp
 
 
@@ -43,7 +41,7 @@
     </div>
     <span id="currentStart">0:00</span>
     <div class="bar">
-        <input type="range" id="seek" min="0" value="0" max="100">
+        <input type="range" id="seek" min="0" max="100" value="0" >
         <div class="bar2" id="bar2"></div>
         <div class="dot"></div>
     </div>
@@ -77,27 +75,27 @@
                 });
 
 
-                var product_id = $('.update_favitem').attr('data-productid');
-                console.log(product_id);
+                var music_id = $('.update_favitem').attr('data-musicid');
+
                 $.ajax({
                     type: 'POST',
                     url: '/updateFavList',
                     data: {
-                        product_id: product_id,
+                        music_id: music_id,
                         user_id: user_id
 
                     },
                     success: function(response) {
 
                         if (response.action == "add") {
-                            console.log(product_id);
-                             $('.update_favitem').html(
+
+                             $('a[data-musicid='+music_id+']').html(
                                 `<i class="fas heart-red fa-heart "></i>`)
 
 
                         } else if (response.action == "remove") {
-                            console.log(product_id);
-                            $('.update_favitem').html(
+
+                            $('a[data-musicid='+music_id+']').html(
                                 `<i class="far heart-white fa-heart "></i>`)
 
                         }

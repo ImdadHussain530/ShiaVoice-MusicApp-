@@ -1,4 +1,3 @@
-const music = new Audio('assets/audio/vande.mp3');
 
 // create Array
 
@@ -17,77 +16,78 @@ const music = new Audio('assets/audio/vande.mp3');
 //     },
 //     // all object type
 //     {
-//         id:"3",
-//         songName: `Cartoon - On & On <br><div class="subtitle"> Daniel Levi</div>`,
-//         poster: "assets/img/3.jpg",
-//     },
-//     {
-//         id:"4",
-//         songName: `Warriyo - Mortals <br><div class="subtitle">Mortals</div>`,
-//         poster: "assets/img/4.jpg",
-//     },
-//     {
-//         id:"5",
-//         songName: `Ertugrul Gazi <br><div class="subtitle">Ertugrul</div>`,
-//         poster: "assets/img/5.jpg",
-//     },
-//     {
-//         id:"6",
-//         songName: `Electronic Music <br><div class="subtitle">Electro</div>`,
-//         poster: "assets/img/6.jpg",
-//     },
-//     {
-//         id:"7",
+    //         id:"3",
+    //         songName: `Cartoon - On & On <br><div class="subtitle"> Daniel Levi</div>`,
+    //         poster: "assets/img/3.jpg",
+    //     },
+    //     {
+        //         id:"4",
+        //         songName: `Warriyo - Mortals <br><div class="subtitle">Mortals</div>`,
+        //         poster: "assets/img/4.jpg",
+        //     },
+        //     {
+            //         id:"5",
+            //         songName: `Ertugrul Gazi <br><div class="subtitle">Ertugrul</div>`,
+            //         poster: "assets/img/5.jpg",
+            //     },
+            //     {
+                //         id:"6",
+                //         songName: `Electronic Music <br><div class="subtitle">Electro</div>`,
+                //         poster: "assets/img/6.jpg",
+                //     },
+                //     {
+                    //         id:"7",
 //         songName: `Agar Tum Sath Ho <br><div class="subtitle">Tamashaa</div>`,
 //         poster: "assets/img/7.jpg",
 //     },
 //     {
-//         id:"8",
-//         songName: `Suna Hai <br><div class="subtitle">Neha Kakker</div>`,
-//         poster: "assets/img/8.jpg",
-//     },
-//     {
-//         id:"9",
-//         songName: `Dilber <br><div class="subtitle">Satyameva Jayate</div>`,
-//         poster: "assets/img/9.jpg",
-//     },
-//     {
-//         id:"10",
-//         songName: `Duniya <br><div class="subtitle">Luka Chuppi</div>`,
-//         poster: "assets/img/10.jpg",
-//     },
-//     {
+    //         id:"8",
+    //         songName: `Suna Hai <br><div class="subtitle">Neha Kakker</div>`,
+    //         poster: "assets/img/8.jpg",
+    //     },
+    //     {
+        //         id:"9",
+        //         songName: `Dilber <br><div class="subtitle">Satyameva Jayate</div>`,
+        //         poster: "assets/img/9.jpg",
+        //     },
+        //     {
+            //         id:"10",
+            //         songName: `Duniya <br><div class="subtitle">Luka Chuppi</div>`,
+            //         poster: "assets/img/10.jpg",
+            //     },
+            //     {
 //         id:"11",
 //         songName: `Lagdi Lahore Di <br><div class="subtitle">Street Dancer 3D</div>`,
 //         poster: "assets/img/11.jpg",
 //     },
 //     {
-//         id:"12",
-//         songName: `Putt Jatt Da <br><div class="subtitle">Putt Jatt Da</div>`,
-//         poster: "assets/img/12.jpg",
-//     },
-//     {
-//         id:"13",
-//         songName: `Baarishein <br><div class="subtitle">Atif Aslam</div>`,
-//         poster: "assets/img/13.jpg",
-//     },
-//     {
-//         id:"14",
-//         songName: `Vaaste <br><div class="subtitle">Dhvani Bhanushali</div>`,
-//         poster: "assets/img/14.jpg",
-//     },
-//     {
-//         id:"15",
-//         songName: `Lut Gaye <br><div class="subtitle">Jubin Nautiyal</div>`,
-//         poster: "assets/img/15.jpg",
-//     },
-// ]
+    //         id:"12",
+    //         songName: `Putt Jatt Da <br><div class="subtitle">Putt Jatt Da</div>`,
+    //         poster: "assets/img/12.jpg",
+    //     },
+    //     {
+        //         id:"13",
+        //         songName: `Baarishein <br><div class="subtitle">Atif Aslam</div>`,
+        //         poster: "assets/img/13.jpg",
+        //     },
+        //     {
+            //         id:"14",
+            //         songName: `Vaaste <br><div class="subtitle">Dhvani Bhanushali</div>`,
+            //         poster: "assets/img/14.jpg",
+            //     },
+            //     {
+                //         id:"15",
+                //         songName: `Lut Gaye <br><div class="subtitle">Jubin Nautiyal</div>`,
+                //         poster: "assets/img/15.jpg",
+                //     },
+                // ]
 
-// Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
+                // Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
 //     element.getElementsByTagName('img')[0].src = songs[i].poster;
 //     element.getElementsByTagName('h5')[0].innerHTML = songs[i].songName;
 // })
 
+let music = new Audio();
 
 let masterPlay = document.getElementById('masterPlay');
 let wave = document.getElementsByClassName('wave')[0];
@@ -137,6 +137,10 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
 
         musicSrc = musicElement.value;
         imgSrc = imgElement.value;
+        // const myHeaders = new Headers();
+        // myHeaders.set("Content-Type", "audio/mpeg");
+        // myHeaders.set("Accept-Ranges", "bytes");
+        // myHeaders.set("Content-Length","")
 
         title.innerHTML = titleElement.value;//due to this line in title all div deleted so we make it above and append it
 
@@ -152,7 +156,7 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
         music.src = `${musicSrc}`;
         poster_master_play.src = `${imgSrc}`;
         console.log('click');
-        productId.setAttribute('data-productid', index);
+        productId.setAttribute('data-musicid', index);
         productId.innerHTML = "<?php checkFav();?>";
         document.cookie = "selected_music=" + index;
         music.play();
@@ -193,8 +197,10 @@ let bar2 = document.getElementById('bar2');
 let dot = document.getElementsByClassName('dot')[0];
 
 music.addEventListener('timeupdate', () => {
+
     let music_curr = music.currentTime;
     let music_dur = music.duration;
+    console.log(music_curr)
 
     let min = Math.floor(music_dur / 60);
     let sec = Math.floor(music_dur % 60);
@@ -218,7 +224,16 @@ music.addEventListener('timeupdate', () => {
 })
 
 seek.addEventListener('change', () => {
-    music.currentTime = seek.value * music.duration / 100;
+    console.log('change');
+    let seekto =  music.duration * (seek.value / 100);
+    // music.load();
+    music.currentTime=seekto;
+    console.log(seekto);
+    console.log(music.currentTime);
+
+
+
+
 })
 
 music.addEventListener('ended', () => {
