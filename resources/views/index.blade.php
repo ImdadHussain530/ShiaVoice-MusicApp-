@@ -8,7 +8,7 @@
     <x-partials.menuSide :musics="$musics" />
 
 
-    <x-partials.song-side :user="$user" title="PopularMusics" :popularmusics="$popularmusics" :popularArtists="$popularArtists" content="display"  />
+    <x-partials.song-side :user="$user" title="PopularMusics" :popularmusics="$popularmusics" :popularArtists="$popularArtists" content="none"  />
 
     <x-partials.master-play />
 

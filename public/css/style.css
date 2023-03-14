@@ -5,6 +5,12 @@
     margin: 0%;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
+.flex-row{
+    display: flex;
+}
 
 body {
     width: 100%;
@@ -33,9 +39,17 @@ header .menu_side, .song_side {
     background-color: #111727;
     box-shadow: 5px 0px 2px #090f1f;
     color: #fff;
+
+}
+header .menu_side .menuNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 header .song_side {
+    overflow: scroll;
     width: 75%;
     background: #0b1320;
 }
@@ -45,12 +59,33 @@ header .master_play {
     height: 10%;
     background: #111727;
     box-shadow: 0px 3px 8px #090f1f;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    white-space: nowrap;
+    overflow-y: hidden;
 }
+
+header .master_play .section1,.section2{
+    display: flex;
+    width: 50%;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 header .menu_side h1 {
     font-size: 20px;
     margin: 15px 0px 0px 20px;
     font-weight: 500;
+}
+header .menu_side .close{
+    display: none;
+    font-size: 20px;
+    margin: 15px 20px 0px 0px;
+    font-weight: 500;
+
 }
 
 header .menu_side .playlist {
@@ -106,14 +141,17 @@ header .menu_side .menu_song {
     /* border: 1px solid #fff; */
     margin-top: 40px;
     white-space: nowrap;
+
 }
+
 header .menu_side .menu_song li{
     position: relative;
     list-style-type: none;
-    padding: 5px 0px 5px 20px;
+    padding: 5px 20px;
     display: flex;
-    flex-flow: wrap;
+    /* flex-flow: wrap; */
     align-items: center;
+    justify-content: space-around;
     margin-bottom: 10px;
     cursor: pointer;
     transition: .3s linear;
@@ -135,8 +173,10 @@ header .menu_side .menu_song li h5{
 
     font-size: 11px;
     margin-left: 15px;
-    width: 10vw;
-    overflow-x: auto;
+    width: 20rem;
+    max-width: 8rem;
+    min-width: 2rem;
+    overflow: scroll;
 }
 header .menu_side .menu_song li h5::-webkit-scrollbar{
     display: none;
@@ -146,24 +186,20 @@ header .menu_side .menu_song li h5 .subtitle{
     color: #4c5262;
 }
 header .menu_side .menu_song .favitem{
-    position: absolute;
-    right: 40px;
-    top: 6px;
     font-size: 16px;
 
 
 }
 header .menu_side .menu_song li .bi{
-    position: absolute;
-    right: 15px;
-    top: 6px;
+    /* position: absolute;
+    right: 15px; */
     font-size: 16px;
 }
 
 header .master_play {
     display: flex;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 1vw;
     white-space: nowrap;
 }
 header .master_play .wave{
@@ -173,7 +209,7 @@ header .master_play .wave{
     padding-bottom: 5px;
     display: flex;
     align-items: flex-end;
-    margin-right: 10px;
+    margin: 10px;
 }
 header .master_play .wave .wave1{
     width: 3px;
@@ -224,7 +260,8 @@ header .master_play h5 {
     margin-left: 15px;
     color: #fff;
     line-height: 17px;
-    width: 10vw;
+    max-width: 10rem;
+    min-width: 2rem;
     overflow-x: auto;
     overflow-y: auto;
 }
@@ -236,9 +273,12 @@ header .master_play h5 .subtitle{
    color: #4c5262;
 }
 header .master_play .icon{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
    font-size: 20px;
    color: #fff;
-   margin: 0px 20px 0px 20px;
    outline: none;
 }
 header .master_play .icon .bi{
@@ -365,7 +405,11 @@ header .master_play .vol input{
  }
 
  header .song_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
      z-index: 2;
+     overflow-x: hidden;
  }
  header .song_side::before{
      content: '';
@@ -375,10 +419,23 @@ header .master_play .vol input{
      background: url('../assets/img/bg.png');
      z-index: -1;
  }
+ header .song_side .nav1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+
+ }
+ header .song_side .nav1 .playlist-icon{
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+ }
  header .song_side nav{
     width: 90%;
     height: 10%;
-    margin: auto;
+    margin: 5px auto;
     /* border: 1px solid #fff; */
     display: flex;
     align-items: center;
@@ -412,12 +469,15 @@ header .master_play .vol input{
    border-radius: 20px;
  }
  header .song_side nav .search{
+    overflow:hidden;
+    display: flex;
    position: relative;
-   width: 40%;
+   width: 50%;
    padding: 1px 10px;
    border-radius: 20px;
    color: gray;
  }
+
  header .song_side nav .search::before{
      content: '';
    position: absolute;
@@ -430,13 +490,14 @@ header .master_play .vol input{
  }
  header .song_side nav .search .bi{
     font-size: 13px;
-    padding: 3px 0px 0px 10px;
+    padding: 8px 0px 8px 20px;
  }
  header .song_side nav .search input{
+
     background: none;
     outline: none;
     border: none;
-    padding: 0px 10px;
+    padding: 8px 8px;
     color: #fff;
     font-size: 12px;
  }
@@ -639,3 +700,80 @@ header .song_side .popular_artists .item li img{
  border-radius: 50%;
  position: absolute;
 }
+
+
+@media screen and (max-width: 990px) {
+    header .song_side .nav1 .playlist-icon{
+        display: block;
+     }
+    header .menu_side .close{
+        display: block;
+
+    }
+
+
+    .active .menu_side {
+
+        transform: translateX(0%);
+        transition:all 0.5s linear;
+        width:40vw;
+        z-index: 3;
+
+    }
+    header .menu_side{
+
+        transform: translateX(-100%);
+        transition:all 0.5s linear;
+
+    }
+
+    header .song_side{
+
+        position: absolute;
+        right: 0;
+        width: 100%;
+        transition: all 0.5s linear;
+    }
+
+  }
+  @media screen and (max-width: 690px){
+    .active .menu_side {
+
+        width:70%;
+
+    }
+    header .master_play{
+        flex-direction: column;
+    }
+    header .master_play .section1,.section2{
+        width: 100%;
+        margin: auto;
+    justify-content: space-around;
+        /* justify-content: center; */
+    }
+    header .master_play .section2{
+        display: none;
+
+    }
+  }
+  @media screen and (max-width: 490px){
+    h4{
+        font-size: 1rem;
+    }
+    .active .menu_side {
+
+        width:100%;
+
+    }
+    header .song_side nav{
+       flex-direction: column;
+       align-items: flex-start;
+       height: auto;
+
+     }
+     header .song_side nav .search{
+       width: 98%;
+       align-self: center;
+     }
+
+  }

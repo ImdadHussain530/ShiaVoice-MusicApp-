@@ -1,3 +1,4 @@
+
 <x-layout.admin.App>
     <x-partials.admin.navbar />
     <x-partials.admin.sidebar />
@@ -5,6 +6,7 @@
         <h1 class="p-3 font-weight-bold">Music</h1>
         <div class="container">
             <a name="" id="" class="btn btn-primary " href="{{route('addmusic')}}" role="button">Add Music</a>
+            <div class="table-responsive">
             <table class=" table table-striped table-dark">
                 <thead>
                     <tr>
@@ -47,9 +49,9 @@
                             <td>
                                 <div class="btn-group" role="group" aria-label="Button group">
                                     <a name="" id="" class="btn btn-primary" href="{{route('updateViewMusic',['id'=>$music->id])}}"
-                                        role="button">Update</a>
+                                        role="button"><i class="fa-regular fa-pen-to-square"></i></a>
                                     <a name="" id="" class="btn btn-primary" href="{{route('DeleteMusic',['id'=>$music->id])}}"
-                                        role="button">Delete</a>
+                                        role="button"><i class="fa-solid fa-trash"></i></a>
 
                                 </div>
 
@@ -62,6 +64,7 @@
 
                 </tbody>
             </table>
+        </div>
 
 
         </div>

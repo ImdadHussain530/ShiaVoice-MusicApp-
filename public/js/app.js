@@ -129,27 +129,23 @@ subtitle.setAttribute('class', 'subtitle');
 
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
+        console.log('click');
         index = e.target.id;
-        musicElement = e.target.nextElementSibling;//to get next element from class playListPlays
+
+        musicElement = e.target.parentElement.nextElementSibling;
+        console.log(e.target)//to get next element from class playListPlays
         imgElement = musicElement.nextElementSibling;
         titleElement = imgElement.nextElementSibling;
         subtitleElement = titleElement.nextElementSibling;
-
         musicSrc = musicElement.value;
         imgSrc = imgElement.value;
-        // const myHeaders = new Headers();
-        // myHeaders.set("Content-Type", "audio/mpeg");
-        // myHeaders.set("Accept-Ranges", "bytes");
-        // myHeaders.set("Content-Length","")
+
 
         title.innerHTML = titleElement.value;//due to this line in title all div deleted so we make it above and append it
 
         title.appendChild(subtitle);
         subtitle.innerHTML = subtitleElement.value;
-        // console.log(index);
-        // console.log(productId);
 
-        // console.log(musicSrc);
         makeAllPlays();
         e.target.classList.remove('bi-play-circle-fill');
         e.target.classList.add('bi-pause-circle-fill');
@@ -168,14 +164,7 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
         }
         xhttp.open("GET", "function");
         xhttp.send();
-        // let song_title = songs.filter((ele)=>{
-        //     return ele.id == index;
-        // })
 
-        // song_title.forEach(ele =>{
-        //     let {songName} = ele;
-        //     title.innerHTML = songName;
-        // })
         masterPlay.classList.remove('bi-play-fill');
         masterPlay.classList.add('bi-pause-fill');
         wave.classList.add('active2');
@@ -185,7 +174,7 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
             wave.classList.remove('active2');
         })
         makeAllBackgrounds();
-        // Array.from(document.getElementsByClassName('songItem'))[`${index - 1}`].style.background = "rgb(105, 105, 170, .1)";
+
     })
 })
 

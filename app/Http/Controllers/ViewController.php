@@ -47,6 +47,11 @@ class ViewController extends Controller
         $musics=Music::with('artist')->get();
         $data=compact('musics');
         return view('admin.music')->with($data);
+        // return response()
+        // ->view('admin.music',$data,200)
+        // ->withHeaders([
+        //     'Accept-Ranges' => 'bytes'
+        // ]);
     }
     function artist(){
         $artists=Artist::all();

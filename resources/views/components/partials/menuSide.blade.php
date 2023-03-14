@@ -1,6 +1,11 @@
 
 <div class="menu_side">
-    <h1>Playlist</h1>
+    <div class="menuNav">
+        <h1>Playlist</h1>
+        <a onclick="toggleplayList()" class="close"><i class="fa-regular fa-rectangle-xmark"></i></a>
+
+    </div>
+
     <div class="playlist">
         <h4 class="active" id='PlayList'><span></span><i class="bi bi-music-note-beamed"></i> Playlist</h4>
         <h4 id='FavoriteList'><span></span><i class="bi bi-music-note-beamed" ></i>Favorite List</h4>
@@ -43,20 +48,18 @@
                     {{ $music->title }}
                     <div class="subtitle">{{ $music->artist_name }}</div>
                 </h5>
-                <div class="favitem">
-                    <a data-musicid="{{ $music->id }}" class="updateMenu_favitem" id="">
-                        @php
-                            echo App\Http\Controllers\FavListController::checkFavUsingId("$music->id");
-                        @endphp
+                <div class="flex-row">
+                    <div class="favitem mx-3">
+                        <a data-musicid="{{ $music->id }}" class="updateMenu_favitem" id="">
+                            @php
+                                echo App\Http\Controllers\FavListController::checkFavUsingId("$music->id");
+                            @endphp
+                        </a>
 
-
-
-                    </a>
-
+                    </div>
+                    <i class="bi playListPlay bi-play-circle-fill" id="{{ $music->id }}"></i>
                 </div>
 
-
-                <i class="bi playListPlay bi-play-circle-fill" id="{{ $music->id }}"></i>
                 {{-- make to pass value to javaScript --}}
                 <input type="hidden" id="musicdata" value="{{ asset('assets/audio/uploaded/' . $music->music) }}">
                 <input type="hidden" id="imgdata" value="{{ asset('assets/img/uploaded/' . $music->poster) }}">
