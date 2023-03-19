@@ -16,73 +16,73 @@
 //     },
 //     // all object type
 //     {
-    //         id:"3",
-    //         songName: `Cartoon - On & On <br><div class="subtitle"> Daniel Levi</div>`,
-    //         poster: "assets/img/3.jpg",
-    //     },
-    //     {
-        //         id:"4",
-        //         songName: `Warriyo - Mortals <br><div class="subtitle">Mortals</div>`,
-        //         poster: "assets/img/4.jpg",
-        //     },
-        //     {
-            //         id:"5",
-            //         songName: `Ertugrul Gazi <br><div class="subtitle">Ertugrul</div>`,
-            //         poster: "assets/img/5.jpg",
-            //     },
-            //     {
-                //         id:"6",
-                //         songName: `Electronic Music <br><div class="subtitle">Electro</div>`,
-                //         poster: "assets/img/6.jpg",
-                //     },
-                //     {
-                    //         id:"7",
+//         id:"3",
+//         songName: `Cartoon - On & On <br><div class="subtitle"> Daniel Levi</div>`,
+//         poster: "assets/img/3.jpg",
+//     },
+//     {
+//         id:"4",
+//         songName: `Warriyo - Mortals <br><div class="subtitle">Mortals</div>`,
+//         poster: "assets/img/4.jpg",
+//     },
+//     {
+//         id:"5",
+//         songName: `Ertugrul Gazi <br><div class="subtitle">Ertugrul</div>`,
+//         poster: "assets/img/5.jpg",
+//     },
+//     {
+//         id:"6",
+//         songName: `Electronic Music <br><div class="subtitle">Electro</div>`,
+//         poster: "assets/img/6.jpg",
+//     },
+//     {
+//         id:"7",
 //         songName: `Agar Tum Sath Ho <br><div class="subtitle">Tamashaa</div>`,
 //         poster: "assets/img/7.jpg",
 //     },
 //     {
-    //         id:"8",
-    //         songName: `Suna Hai <br><div class="subtitle">Neha Kakker</div>`,
-    //         poster: "assets/img/8.jpg",
-    //     },
-    //     {
-        //         id:"9",
-        //         songName: `Dilber <br><div class="subtitle">Satyameva Jayate</div>`,
-        //         poster: "assets/img/9.jpg",
-        //     },
-        //     {
-            //         id:"10",
-            //         songName: `Duniya <br><div class="subtitle">Luka Chuppi</div>`,
-            //         poster: "assets/img/10.jpg",
-            //     },
-            //     {
+//         id:"8",
+//         songName: `Suna Hai <br><div class="subtitle">Neha Kakker</div>`,
+//         poster: "assets/img/8.jpg",
+//     },
+//     {
+//         id:"9",
+//         songName: `Dilber <br><div class="subtitle">Satyameva Jayate</div>`,
+//         poster: "assets/img/9.jpg",
+//     },
+//     {
+//         id:"10",
+//         songName: `Duniya <br><div class="subtitle">Luka Chuppi</div>`,
+//         poster: "assets/img/10.jpg",
+//     },
+//     {
 //         id:"11",
 //         songName: `Lagdi Lahore Di <br><div class="subtitle">Street Dancer 3D</div>`,
 //         poster: "assets/img/11.jpg",
 //     },
 //     {
-    //         id:"12",
-    //         songName: `Putt Jatt Da <br><div class="subtitle">Putt Jatt Da</div>`,
-    //         poster: "assets/img/12.jpg",
-    //     },
-    //     {
-        //         id:"13",
-        //         songName: `Baarishein <br><div class="subtitle">Atif Aslam</div>`,
-        //         poster: "assets/img/13.jpg",
-        //     },
-        //     {
-            //         id:"14",
-            //         songName: `Vaaste <br><div class="subtitle">Dhvani Bhanushali</div>`,
-            //         poster: "assets/img/14.jpg",
-            //     },
-            //     {
-                //         id:"15",
-                //         songName: `Lut Gaye <br><div class="subtitle">Jubin Nautiyal</div>`,
-                //         poster: "assets/img/15.jpg",
-                //     },
-                // ]
+//         id:"12",
+//         songName: `Putt Jatt Da <br><div class="subtitle">Putt Jatt Da</div>`,
+//         poster: "assets/img/12.jpg",
+//     },
+//     {
+//         id:"13",
+//         songName: `Baarishein <br><div class="subtitle">Atif Aslam</div>`,
+//         poster: "assets/img/13.jpg",
+//     },
+//     {
+//         id:"14",
+//         songName: `Vaaste <br><div class="subtitle">Dhvani Bhanushali</div>`,
+//         poster: "assets/img/14.jpg",
+//     },
+//     {
+//         id:"15",
+//         songName: `Lut Gaye <br><div class="subtitle">Jubin Nautiyal</div>`,
+//         poster: "assets/img/15.jpg",
+//     },
+// ]
 
-                // Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
+// Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
 //     element.getElementsByTagName('img')[0].src = songs[i].poster;
 //     element.getElementsByTagName('h5')[0].innerHTML = songs[i].songName;
 // })
@@ -124,16 +124,19 @@ let musicSrc = 0;
 let poster_master_play = document.getElementById('poster_master_play');
 let title = document.getElementById('title');
 let productId = document.querySelector('#update_favitem');
+let MasterMusicId = document.querySelector('#Master_musicId');
 const subtitle = document.createElement("div");
 subtitle.setAttribute('class', 'subtitle');
 
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
-        console.log('click');
+        // console.log('click');
         index = e.target.id;
 
+
+
         musicElement = e.target.parentElement.nextElementSibling;
-        console.log(e.target)//to get next element from class playListPlays
+        //to get next element from class playListPlays
         imgElement = musicElement.nextElementSibling;
         titleElement = imgElement.nextElementSibling;
         subtitleElement = titleElement.nextElementSibling;
@@ -149,21 +152,15 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
         makeAllPlays();
         e.target.classList.remove('bi-play-circle-fill');
         e.target.classList.add('bi-pause-circle-fill');
+        MasterMusicId.value = index;
         music.src = `${musicSrc}`;
         poster_master_play.src = `${imgSrc}`;
-        console.log('click');
+        // console.log('click');
         productId.setAttribute('data-musicid', index);
-        productId.innerHTML = "<?php checkFav();?>";
+        productId.innerHTML="<?php checkFav();?>";
         document.cookie = "selected_music=" + index;
         music.play();
 
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function () {
-            productId.innerHTML =
-                this.responseText;
-        }
-        xhttp.open("GET", "function");
-        xhttp.send();
 
         masterPlay.classList.remove('bi-play-fill');
         masterPlay.classList.add('bi-pause-fill');
@@ -189,7 +186,7 @@ music.addEventListener('timeupdate', () => {
 
     let music_curr = music.currentTime;
     let music_dur = music.duration;
-    console.log(music_curr)
+    // console.log(music_curr)
 
     let min = Math.floor(music_dur / 60);
     let sec = Math.floor(music_dur % 60);
@@ -213,10 +210,10 @@ music.addEventListener('timeupdate', () => {
 })
 
 seek.addEventListener('change', () => {
-    console.log('change');
-    let seekto =  music.duration * (seek.value / 100);
+    // console.log('change');
+    let seekto = music.duration * (seek.value / 100);
     // music.load();
-    music.currentTime=seekto;
+    music.currentTime = seekto;
     console.log(seekto);
     console.log(music.currentTime);
 
@@ -266,56 +263,87 @@ let back = document.getElementById('back');
 let next = document.getElementById('next');
 
 back.addEventListener('click', () => {
-    index -= 1;
-    if (index < 1) {
-        index = Array.from(document.getElementsByClassName('songItem')).length;
-    }
-    musicElement = element.nextElementSibling;//to get next element from class playListPlays
-    imgElement = musicElement.nextElementSibling;
-    musicSrc = musicElement.value;
-    imgSrc = imgElement.value;
-    music.src = musicSrc;
-    poster_master_play.src = imgSrc;
-    music.play();
-    let song_title = songs.filter((ele) => {
-        return ele.id == index;
-    })
+    presentMusicId = MasterMusicId.value;
+    let indexInArry = AllPlyListIndexes.indexOf(presentMusicId);
+    indexInArry--;
+    let nextMusicId;
 
-    song_title.forEach(ele => {
-        let { songName } = ele;
-        title.innerHTML = songName;
-    })
+    if(indexInArry>-1){
+        nextMusicId=AllPlyListIndexes[indexInArry];
+    }else{
+        nextMusicId=AllPlyListIndexes[(AllPlyListIndexes.length-1)];
+    }
+
+    const baseUrl=window.location.origin;
+    const URL=baseUrl+'/api/get-all-musics/'+nextMusicId;
+    const xhttp = new XMLHttpRequest();
+    let nextMusic;
+    xhttp.onload = function () {
+        nextMusic=JSON.parse(this.response);
+        music.src = `assets/audio/uploaded/${nextMusic.music}`;
+        poster_master_play.src = `assets/img/uploaded/${nextMusic.poster}`;
+        title.innerHTML = nextMusic.title;
+        MasterMusicId.value=nextMusic.id;
+        productId.setAttribute('data-musicid', nextMusic.id);
+        music.play();
+    }
+    xhttp.open("GET",URL);
+    xhttp.send();
+
     makeAllPlays()
 
-    document.getElementById(`${index}`).classList.remove('bi-play-fill');
-    document.getElementById(`${index}`).classList.add('bi-pause-fill');
+    document.getElementById(`${nextMusicId}`).children[3].children[1].classList.remove('bi-play-circle-fill');
+    document.getElementById(`${nextMusicId}`).children[3].children[1].classList.add('bi-pause-circle-fill');
     makeAllBackgrounds();
-    Array.from(document.getElementsByClassName('songItem'))[`${index - 1}`].style.background = "rgb(105, 105, 170, .1)";
+    document.getElementById(`${nextMusicId}`).style.background = "rgb(105, 105, 170, .1)";
+
 
 })
-next.addEventListener('click', () => {
-    index -= 0;
-    index += 1;
-    if (index > Array.from(document.getElementsByClassName('songItem')).length) {
-        index = 1;
-    }
-    music.src = `assets/audio/${index}.mp3`;
-    poster_master_play.src = `img/${index}.jpg`;
-    music.play();
-    let song_title = songs.filter((ele) => {
-        return ele.id == index;
-    })
 
-    song_title.forEach(ele => {
-        let { songName } = ele;
-        title.innerHTML = songName;
-    })
+const AllPlyListIndexes = [];
+Array.from(document.getElementsByClassName('plylist')).forEach((element) => {
+    index = element.id
+    AllPlyListIndexes.push(index);
+
+})
+
+
+
+next.addEventListener('click', (e) => {
+    presentMusicId = MasterMusicId.value;
+    let indexInArry = AllPlyListIndexes.indexOf(presentMusicId);
+    indexInArry++;
+    let nextMusicId;
+
+    if(indexInArry<AllPlyListIndexes.length){
+        nextMusicId=AllPlyListIndexes[indexInArry];
+    }else{
+        nextMusicId=AllPlyListIndexes[0];
+    }
+
+    const baseUrl=window.location.origin;
+    const URL=baseUrl+'/api/get-all-musics/'+nextMusicId;
+    const xhttp = new XMLHttpRequest();
+    let nextMusic;
+    xhttp.onload = function () {
+        nextMusic=JSON.parse(this.response);
+        music.src = `assets/audio/uploaded/${nextMusic.music}`;
+        poster_master_play.src = `assets/img/uploaded/${nextMusic.poster}`;
+        title.innerHTML = nextMusic.title;
+        MasterMusicId.value=nextMusic.id;
+        productId.setAttribute('data-musicid', nextMusic.id);
+        music.play();
+    }
+    xhttp.open("GET",URL);
+    xhttp.send();
+
     makeAllPlays()
 
-    document.getElementById(`${index}`).classList.remove('bi-play-fill');
-    document.getElementById(`${index}`).classList.add('bi-pause-fill');
+    document.getElementById(`${nextMusicId}`).children[3].children[1].classList.remove('bi-play-circle-fill');
+    document.getElementById(`${nextMusicId}`).children[3].children[1].classList.add('bi-pause-circle-fill');
     makeAllBackgrounds();
-    Array.from(document.getElementsByClassName('songItem'))[`${index - 1}`].style.background = "rgb(105, 105, 170, .1)";
+    document.getElementById(`${nextMusicId}`).style.background = "rgb(105, 105, 170, .1)";
+
 
 })
 

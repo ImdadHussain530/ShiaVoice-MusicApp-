@@ -49,9 +49,13 @@ header .menu_side .menuNav{
 }
 
 header .song_side {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 75%;
     background: #0b1320;
+}
+header .song_side::-webkit-scrollbar{
+    display: none;
 }
 
 header .master_play {
@@ -260,6 +264,7 @@ header .master_play h5 {
     margin-left: 15px;
     color: #fff;
     line-height: 17px;
+    width: 10rem;
     max-width: 10rem;
     min-width: 2rem;
     overflow-x: auto;

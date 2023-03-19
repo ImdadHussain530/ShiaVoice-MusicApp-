@@ -79,7 +79,7 @@
         </div>
         <div class="pop_song">
             @foreach ($popularmusics as $music)
-                <li class="songItem">
+                <li class="songItem" id="{{ $music->id }}">
                     <div class="img_play">
                         <img src="{{ asset('assets/img/uploaded/' . $music->poster) }}"alt="alan">
                         <i class="bi playListPlay bi-play-circle-fill" id="{{ $music->id }}"></i>

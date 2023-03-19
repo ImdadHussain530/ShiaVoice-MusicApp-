@@ -37,7 +37,7 @@
 
         @endphp
         @foreach ($musics as $music)
-            <li class="songItem">
+            <li class="songItem plylist" id="{{ $music->id }}">
 
                 <span>{{ $i < 10 ? '0' . $i : $i }}</span>
 

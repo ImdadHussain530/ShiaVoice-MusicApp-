@@ -25,6 +25,7 @@
         <h5 id="title">Vande Mataram<br>
             <div class="subtitle" id="subtitle">Bankim Chandra</div>
         </h5>
+        <input type="hidden" id="Master_musicId" value="">
 
 
 
